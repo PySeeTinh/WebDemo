@@ -11,6 +11,14 @@
             padding: 0;
             background-color: #f0f8ff;
         }
+        .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .logo span {
+                font-family: 'Brush Script MT', cursive;
+            }
         header {
             background-color: #00bfff;
             color: white;
@@ -45,7 +53,18 @@
             position: relative;
             overflow: hidden;
         }
+        .category2 {
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
         .category h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s;
+        }
+    
+        .category2 h2 {
             text-align: center;
             margin-bottom: 20px;
             animation: slideIn 1.5s;
@@ -59,7 +78,7 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             padding: 15px;
-            width: 30%;
+            width: 20%;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin: 0 10px;
@@ -157,7 +176,7 @@
 
         .footer button {
             padding: 10px 20px;
-            background-color: #007BFF;
+            background-color: #007bff;
             color: white;
             border: none;
             border-radius: 4px;
@@ -173,191 +192,209 @@
             margin: 20px 0;
             color: #333;
         }
+        .content {
+            max-width: 1100px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .content h2 {
+            margin-top: 20px;
+            font-size: 28px;
+        }
+
+        .content p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Fresh Water Shop</h1>
-        <p>Your one-stop shop for premium bottled water</p>
+        <div class="logo">LK <span>Luxury King </span></div>
+        <nav>
+            <a href="#">Shop</a>
+            <a href="#">Voucher</a>
+            <a href="#">Giỏ hàng</a>
+            <a href="#">Về chúng tôi</a>
+        </nav>
     </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="banner">
-        <h2>Stay Hydrated with the Best!</h2>
-        <p>Explore our range of fresh, pure, and refreshing water.</p>
-    </div>
 
-    <section id="promotion" class="category">
+    <div class="content">
+        <img src="https://thuytinhgiare.com/wp-content/uploads/2023/07/hinh-anh-ly-cafe-sua-da_29.jpg" alt="Luxury King">
+        <h2>Về Luxury King</h2>
+        <p>Cuộc sống bền vững dễ dàng hơn</p>
+        <p>Luxury King là nơi cung cấp những sản phẩm thân thiện với môi trường, giúp bạn sống bền vững và dễ dàng hơn. Chúng tôi tự hào mang đến những sản phẩm chất lượng cao, thiết kế đẹp mắt và giá cả hợp lý.</p>
+    </div>
+        <section id="promotion" class="category">
         <h2>Khuyến Mãi</h2>
         <button class="arrow left" onclick="moveCarousel('promotion', -1)">&lt;</button>
         <div class="carousel" id="promotion-carousel">
+            <!-- 9 sản phẩm trong khu vực khuyến mãi -->
             <div class="product">
-                <img src="promo1.jpg" alt="Promo 1">
-                <h3>Discounted Water Bottle</h3>
-                <p>500ml - Special price.</p>
+                <img src="https://hopdungthucan.com/wp-content/uploads/2022/05/hinh-anh-tra-sua-dep-tuyet-800x800.jpg " alt="Promo 1">
+                <h3>Lài sữa</h3>
+                <p>500ml - 45000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="promo2.jpg" alt="Promo 2">
-                <h3>Promo Mineral Water</h3>
-                <p>750ml - Limited time offer.</p>
+                <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-coc-tra-sua-3-1.jpg" alt="Promo 2">
+                <h3>Trà sữa truyền thống</h3>
+                <p>350ml - 40000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="promo3.jpg" alt="Promo 3">
-                <h3>Special Pack</h3>
-                <p>1L - Exclusive deal.</p>
+                <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-ly-tra-sua-4.jpg" alt="Promo 3">
+                <h3>Trà đào cam sả</h3>
+                <p>350ml - 50000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="promo4.jpg" alt="Promo 4">
-                <h3>Promo Pack 2L</h3>
-                <p>Great for parties!</p>
+                <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-ly-tra-sua-5.jpg" alt="Promo 4">
+                <h3>Yaourt trái cây</h3>
+                <p>250ml - 45000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="promo5.jpg" alt="Promo 5">
-                <h3>500ml Special</h3>
-                <p>Great for kids!</p>
+                <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-tra-sua-3-1.jpg" alt="Promo 5">
+                <h3>Bạc xỉu</h3>
+                <p>250ml - 35000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="promo6.jpg" alt="Promo 6">
-                <h3>Deal of the Day</h3>
-                <p>Best price!</p>
+                <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-tra-sua-4-1.jpg" alt="Promo 6">
+                <h3>Trà sữa matcha</h3>
+                <p>350ml - 49000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="promo7.jpg" alt="Promo 7">
-                <h3>Exclusive Bottle</h3>
-                <p>Limited edition.</p>
+                <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Hinh-anh-ly-tra-sua-3-1.jpg" alt="Promo 7">
+                <h3>Trà lài</h3>
+                <p>300ml  -39000VNĐ .</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="promo8.jpg" alt="Promo 8">
-                <h3>Family Pack</h3>
-                <p>For all your needs.</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="promo9.jpg" alt="Promo 9">
-                <h3>Holiday Pack</h3>
-                <p>Special pack offer!</p>
+                <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Hinh-anh-ly-tra-sua.jpg" alt="Promo 8">
+                <h3>Đá xay matcha</h3>
+                <p>1L - Limited stock.</p>
                 <button>Add to Cart</button>
             </div>
         </div>
         <button class="arrow right" onclick="moveCarousel('promotion', 1)">&gt;</button>
     </section>
 
-    <section id="bestsellers" class="category">
-        <h2>Bán Chạy</h2>
+    <section id="bestsellers" class="category2">
+        <h2>bestseller</h2>
         <button class="arrow left" onclick="moveCarousel('bestsellers', -1)">&lt;</button>
         <div class="carousel" id="bestsellers-carousel">
+            <!-- 6 sản phẩm trong khu vực bán chạy -->
             <div class="product">
-                <img src="bestseller1.jpg" alt="Best Seller 1">
-                <h3>Popular Sparkling Water</h3>
-                <p>1L - Customer favorite.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRggrPrjO8LcCt6Hhm6ZSZ7TPzHD5v83nAyAw&s" alt="Best Seller 1">
+                <h3>Capuchino</h3>
+                <p>100mL - 59000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="bestseller2.jpg" alt="Best Seller 2">
-                <h3>Classic Mineral Water</h3>
-                <p>750ml - Highly rated.</p>
+                <img src="https://thuytinhgiare.com/wp-content/uploads/2023/07/hinh-anh-ly-cafe-sua-da_3.jpg" alt="Best Seller 2">
+                <h3>Cafe sữa đá</h3>
+                <p>300ml - 37000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="bestseller3.jpg" alt="Best Seller 3">
-                <h3>Refreshing Pack</h3>
-                <p>500ml - Loved by all.</p>
+                <img src="https://baristaschool.vn/wp-content/uploads/2022/10/triple-berry-smoothie-feat-min-e1665812323912.jpg" alt="Best Seller 3">
+                <h3>Sinh tố trái cây:</h3>
+                <p>300ml - 45000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="bestseller4.jpg" alt="Best Seller 4">
-                <h3>Super Sparkling</h3>
-                <p>Popular choice!</p>
+                <img src="https://tiemphonui.com/cdn/shop/articles/nuoc-cot-chanh-day.webp?v=1693797609" alt="Best Seller 4">
+                <h3>Nước chanh dây</h3>
+                <p>450ml - 35000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="bestseller5.jpg" alt="Best Seller 5">
-                <h3>Hydration Pack</h3>
-                <p>For the active.</p>
+                <img src="https://www.liquor.com/thmb/MJRVqf-itJGY90nwUOYGXnyG-HA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mojito-720x720-primary-6a57f80e200c412e9a77a1687f312ff7.jpg" alt="Best Seller 5">
+                <h3>Cocktail Mojito</h3>
+                <p>350ml - 57000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="bestseller6.jpg" alt="Best Seller 6">
-                <h3>Water Combo</h3>
-                <p>Best value!</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2TYWfYtFYxZHY8JcUv-6iU0MP3juSOjgrtA&s" alt="Best Seller 6">
+                <h3>Yogurt Drink</h3>
+                <p>250ml - 35000VNĐ.</p>
                 <button>Add to Cart</button>
             </div>
         </div>
         <button class="arrow right" onclick="moveCarousel('bestsellers', 1)">&gt;</button>
     </section>
-
     <section id="combo" class="category">
         <h2>Combo</h2>
         <button class="arrow left" onclick="moveCarousel('combo', -1)">&lt;</button>
         <div class="carousel" id="combo-carousel">
+            <!-- 9 sản phẩm trong khu vực combo -->
             <div class="product">
-                <img src="combo1.jpg" alt="Combo 1">
-                <h3>Family Pack</h3>
-                <p>6 bottles - Perfect for families.</p>
+                <img src="https://banhmimahai.vn/wp-content/uploads/2022/06/cha-ca-11-1.jpg" alt="Combo 1">
+                <h3> Cà phê sữa đá + Bánh mì</h3>
+                <p>59000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="combo2.jpg" alt="Combo 2">
-                <h3>Party Pack</h3>
-                <p>12 bottles - Great value.</p>
+                <img src="https://trungnguyenlegendcafe.net/wp-content/uploads/2021/02/Set-Tr%C3%A0-%C4%90%C3%A0o-Cam-S%E1%BA%A3.jpg" alt="Combo 2">
+                <h3>Trà đào cam sả + Croissant bơ</h3>
+                <p>69000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="combo3.jpg" alt="Combo 3">
-                <h3>Office Pack</h3>
-                <p>24 bottles - For teams.</p>
+                <img src="https://cdn.tgdd.vn/2021/09/CookProductThumb/soda-viet-quat-tuoi-thumbvuong-620x620.jpg" alt="Combo 3">
+                <h3> Soda Ý (vị việt quất) + Cheesecake New York</h3>
+                <p>79000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="combo4.jpg" alt="Combo 4">
-                <h3>Water Set</h3>
-                <p>12-pack - Special price.</p>
+                <img src="https://tbmart.vn/wp-content/uploads/2019/12/tra-hoa-cuc-duong-phen-mat-ong.jpg" alt="Combo 4">
+                <h3>Trà hoa cúc mật ong + Bánh quy bơ</h3>
+                <p>89000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="combo5.jpg" alt="Combo 5">
-                <h3>Economy Pack</h3>
-                <p>Big savings!</p>
+                <img src="https://cdn.chonongsanonline.com/uploads/all/tx1ntI1uQ54oyIYIPhuY8QTbgZhkvzai7TovEqEk.webp    " alt="Combo 5">
+                <h3>Bánh creap + 1 trà sữa truyền thống</h3>
+                <p>12 bottles - Stay hydrated.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="combo6.jpg" alt="Combo 6">
-                <h3>Combo Special</h3>
-                <p>All-in-one pack.</p>
+                <img src="https://enjoycoffee.vn/wp-content/uploads/2024/07/z5645937521026_04b446749bdf8fadc85e47e02239d741.jpg" alt="Combo 6">
+                <h3>2 Bánh sừng bò + 1 cafe sữa + 1 trà sữa</h3>
+                <p>135000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="combo7.jpg" alt="Combo 7">
-                <h3>Exclusive Combo</h3>
-                <p>VIP deal!</p>
+                <img src="https://product.hstatic.net/200000449489/product/6.1_411f479af1c9400a8501c4e892373ef5_master.jpg" alt="Combo 7">
+                <h3>2 bánh cheese</h3>
+                <p>84000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="combo8.jpg" alt="Combo 8">
-                <h3>Best Combo</h3>
-                <p>Perfect pack.</p>
+                <img src="https://savourebakery.com/storage/images/san-pham/Banh%20kem%20bap/Banh-Kem-Bap-Kieu-2.jpg" alt="Combo 8">
+                <h3>1 bánh kem bắp</h3>
+                <p>169000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="combo9.jpg" alt="Combo 9">
-                <h3>Ultimate Pack</h3>
-                <p>The best deal!</p>
+                <img src="https://savourebakery.com/storage/images/san-pham/Banh-tra-xanh-dau-do/Banh-Kem-Tra-Xanh-2.jpg" alt="Combo 9">
+                <h3>Bánh kem matcha</h3>
+                <p>189000VNĐ</p>
                 <button>Add to Cart</button>
             </div>
         </div>
         <button class="arrow right" onclick="moveCarousel('combo', 1)">&gt;</button>
-    </section>
+    </section>  
 
     <!-- Footer Section -->
     <div class="footer">
@@ -381,12 +418,24 @@
             const carousel = document.getElementById(`${category}-carousel`);
             const products = carousel.children.length;
             carousels[category] = (carousels[category] + direction + products) % products;
-            carousel.style.transform = `translateX(-${carousels[category] * 33.333}%`;
+            carousel.style.transform = `translateX(-${carousels[category] * 13}%`;
         }
 
         function autoSlide() {
             Object.keys(carousels).forEach(category => moveCarousel(category, 1));
         }
+        function moveCarousel(category2, direction) {
+            const carousel = document.getElementById(`${category2}-carousel`);
+            const products = carousel.children.length;
+            carousels[category2] = (carousels[category2] + direction + products) % products;
+            carousel.style.transform = `translateX(-${carousels[category2] * 9}%`;
+        }
+
+        function autoSlide() {
+            Object.keys(carousels).forEach(category2 => moveCarousel(category2, 1));
+        }
+
+
 
         setInterval(autoSlide, 3000);
     </script>
