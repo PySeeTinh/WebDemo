@@ -3,32 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh Water Shop</title>
+    <title>Luxury King</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
         }
-        .logo {
-                font-size: 24px;
-                font-weight: bold;
-            }
-
-            .logo span {
-                font-family: 'Brush Script MT', cursive;
-            }
-        header {
-            background-color: #00bfff;
+        .navbar {
+            background-color: green;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
             color: white;
-            padding: 20px;
-            text-align: center;
         }
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: green;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    font-family: 'Brush Script MT', cursive;
+}
+
+nav a, nav button {
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover, nav button:hover {
+    background-color: #ffffff00; /* Thêm hiệu ứng hover */
+}
+
         nav {
             display: flex;
             justify-content: center;
-            background-color: #008cba;
+            background-color: green;
             padding: 10px 0;
         }
         nav a {
@@ -38,7 +70,86 @@
             font-weight: bold;
         }
         nav a:hover {
-            text-decoration: underline;
+            text-decoration: medium;
+        }
+        nav button {
+    position: relative; /* Để định vị tooltip */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+}
+
+nav button:hover {
+    color: #ff1900; /* Đổi màu icon khi hover */
+    transform: scale(1.2); /* Phóng to icon */
+}
+
+/* Tooltip Styles */
+nav button::after {
+    content: attr(data-tooltip); /* Lấy nội dung từ data-tooltip */
+    position: absolute;
+    bottom: -30px; /* Hiển thị bên dưới icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.735); /* Màu nền tooltip */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0; /* Ẩn mặc định */
+    pointer-events: none; /* Đảm bảo không cản chuột */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+nav button:hover::after {
+    opacity: 1; /* Hiển thị khi hover */
+    transform: translateX(-50%) translateY(-5px); /* Hiệu ứng trượt nhẹ */
+}
+        .search-bar {
+            display: flex;
+            align-items: center;
+            flex-grow: 5;
+            margin: 0 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 8px;
+            border: 10px;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
+        .search-bar button {
+            background-color: white;
+            color: green;
+            border: none;
+            padding: 8px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #ececec;
+        }
+        .navbar .cart {
+            font-size: 20px;
+        }
+        .search-bar button {
+            background-color: white;
+            color: #000000;
+            border: none;
+            padding: 5px 24px;
+            border-radius: 28px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #f7d7d5;
+        }
+        .navbar .cart {
+            font-size: 20px;
         }
         .banner {
             text-align: center;
@@ -98,7 +209,7 @@
             color: #555;
         }
         .product button {
-            background-color: #00bfff;
+            background-color: green;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -107,12 +218,25 @@
             transition: background-color 0.3s;
         }
         .product button:hover {
-            background-color: #008cba;
+            background-color: green;
         }
         .product:hover {
             transform: scale(1.1);
             opacity: 0.8;
         }
+        button.add-to-cart {
+  padding: 10px 15px;
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.add-to-cart:hover {
+  background-color: green;
+}
         .arrow {
             position: absolute;
             top: 50%;
@@ -213,18 +337,53 @@
             font-size: 18px;
             color: #555;
         }
+        .right-links {
+    font-weight: bold;
+    color: white;
+}
+
     </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <!-- Left Links -->
+
+    
+            <!-- Logo and Search Bar -->
+            <div class="search-bar">
+                <span>  </span>
+                <input type="text" placeholder="Tìm kiếm">
+                <button>Tìm kiếm</button>
+            </div>
+    
+            <!-- Right Links -->
+            <div class="right-links">
+                <a href="#" class="right-links">Danh sách</a>
+                <a href="Login.html" class="right-links">Đăng nhập</a>       
+             </div>
+        </div>
+    </body>
+    </html>
 </head>
 <body>
     <header>
-        <div class="logo">LK <span>Luxury King </span></div>
+        <div class="logo">LK <span>Luxury King</span></div>
+
+        <a>
         <nav>
-            <a href="#">Shop</a>
-            <a href="#">Voucher</a>
-            <a href="#">Giỏ hàng</a>
-            <a href="#">Về chúng tôi</a>
+            <button data-tooltip="Shop" onclick="location.href='#'"><i class="fas fa-store"></i></button>
+            <button data-tooltip="Voucher" onclick="location.href='#'"><i class="fas fa-gift"></i></button>
+            <button data-tooltip="Giỏ Hàng" onclick="location.href='Giohang.html'"><i class="fas fa-shopping-cart"></i></button>
+            <button data-tooltip="Về chúng tôi" onclick="location.href='#'"><i class="fas fa-info-circle"></i></button>
         </nav>
+    </a>
     </header>
+    
+    <nav>
+        <div class="nav button::after ">
+
+        </div>
+    </nav>
 
     <div class="content">
         <img src="https://thuytinhgiare.com/wp-content/uploads/2023/07/hinh-anh-ly-cafe-sua-da_29.jpg" alt="Luxury King">
@@ -241,49 +400,89 @@
                 <img src="https://hopdungthucan.com/wp-content/uploads/2022/05/hinh-anh-tra-sua-dep-tuyet-800x800.jpg " alt="Promo 1">
                 <h3>Lài sữa</h3>
                 <p>500ml - 45000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Lài sữa" 
+                data-price="45000"
+                data-image="https://hopdungthucan.com/wp-content/uploads/2022/05/hinh-anh-tra-sua-dep-tuyet-800x800.jpg ">
+                Thêm vào giỏ hàng
+                </button>
             </div>
             <div class="product">
                 <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-coc-tra-sua-3-1.jpg" alt="Promo 2">
                 <h3>Trà sữa truyền thống</h3>
                 <p>350ml - 40000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Trà sữa truyền thống" 
+                data-price="40000"
+                data-image="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-coc-tra-sua-3-1.jpg">
+                Thêm vào giỏ hàng
+                </button>
             </div>
             <div class="product">
                 <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-ly-tra-sua-4.jpg" alt="Promo 3">
                 <h3>Trà đào cam sả</h3>
                 <p>350ml - 50000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Trà đào cam sả" 
+                data-price="50000"
+                data-image="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-ly-tra-sua-4.jpg    ">
+                Thêm vào giỏ hàng
+                </button>
             </div>
             <div class="product">
                 <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-ly-tra-sua-5.jpg" alt="Promo 4">
                 <h3>Yaourt trái cây</h3>
                 <p>250ml - 45000VNĐ.</p>
-                <button>Add to Cart</button>
-            </div>
+                <button class="add-to-cart" 
+                data-name="Yaourt trái cây" 
+                data-price="45000"
+                data-image="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-ly-tra-sua-5.jpg">
+                Thêm vào giỏ hàng
+                </button>         
+             </div>
             <div class="product">
                 <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-tra-sua-3-1.jpg" alt="Promo 5">
                 <h3>Bạc xỉu</h3>
                 <p>250ml - 35000VNĐ.</p>
-                <button>Add to Cart</button>
-            </div>
+                <button class="add-to-cart" 
+                data-name="Bạc xỉu" 
+                data-price="35000"
+                data-image="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-tra-sua-3-1.jpg">
+                Thêm vào giỏ hàng
+                </button>          
+               </div>
             <div class="product">
                 <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-tra-sua-4-1.jpg" alt="Promo 6">
                 <h3>Trà sữa matcha</h3>
                 <p>350ml - 49000VNĐ.</p>
-                <button>Add to Cart</button>
-            </div>
+                <button class="add-to-cart" 
+                data-name="Trà sữa matcha" 
+                data-price="49000"
+                data-image="hhttps://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-tra-sua-4-1.jpg">
+                Thêm vào giỏ hàng
+                </button>  
+             </div>
             <div class="product">
                 <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Hinh-anh-ly-tra-sua-3-1.jpg" alt="Promo 7">
                 <h3>Trà lài</h3>
                 <p>300ml  -39000VNĐ .</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Trà lài" 
+                data-price="39000"
+                data-image="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Hinh-anh-ly-tra-sua-3-1.jpg">
+                Thêm vào giỏ hàng
+                </button>
             </div>
             <div class="product">
                 <img src="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Hinh-anh-ly-tra-sua.jpg" alt="Promo 8">
-                <h3>Đá xay matcha</h3>
-                <p>1L - Limited stock.</p>
-                <button>Add to Cart</button>
+                <h3>matcha Đá xay</h3>
+                <p>350ml - 50000VNĐ.</p>
+                <button class="add-to-cart" 
+                data-name="matcha Đá xay" 
+                data-price="50000"
+                data-image="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Hinh-anh-ly-tra-sua.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
         </div>
         <button class="arrow right" onclick="moveCarousel('promotion', 1)">&gt;</button>
@@ -298,37 +497,67 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRggrPrjO8LcCt6Hhm6ZSZ7TPzHD5v83nAyAw&s" alt="Best Seller 1">
                 <h3>Capuchino</h3>
                 <p>100mL - 59000VNĐ.</p>
-                <button>Add to Cart</button>
-            </div>
+                <button class="add-to-cart" 
+                data-name="Capuchino" 
+                data-price="59000"
+                data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRggrPrjO8LcCt6Hhm6ZSZ7TPzHD5v83nAyAw&s">
+                Thêm vào giỏ hàng
+                </button>        
+              </div>
             <div class="product">
                 <img src="https://thuytinhgiare.com/wp-content/uploads/2023/07/hinh-anh-ly-cafe-sua-da_3.jpg" alt="Best Seller 2">
                 <h3>Cafe sữa đá</h3>
                 <p>300ml - 37000VNĐ.</p>
-                <button>Add to Cart</button>
-            </div>
+                <button class="add-to-cart" 
+                data-name="Cafe sữa đá" 
+                data-price="37000"
+                data-image="https://thuytinhluminarc.com/wp-content/uploads/2022/08/Anh-coc-tra-sua-3-1.jpg">
+                Thêm vào giỏ hàng
+                </button>  
+                </div>
             <div class="product">
                 <img src="https://baristaschool.vn/wp-content/uploads/2022/10/triple-berry-smoothie-feat-min-e1665812323912.jpg" alt="Best Seller 3">
-                <h3>Sinh tố trái cây:</h3>
+                <h3>Sinh tố trái cây</h3>
                 <p>300ml - 45000VNĐ.</p>
-                <button>Add to Cart</button>
-            </div>
+                <button class="add-to-cart" 
+                data-name="Sinh tố trái cây" 
+                data-price="45000"
+                data-image="https://baristaschool.vn/wp-content/uploads/2022/10/triple-berry-smoothie-feat-min-e1665812323912.jpg">
+                Thêm vào giỏ hàng
+                </button> 
+                </div>
             <div class="product">
                 <img src="https://tiemphonui.com/cdn/shop/articles/nuoc-cot-chanh-day.webp?v=1693797609" alt="Best Seller 4">
                 <h3>Nước chanh dây</h3>
                 <p>450ml - 35000VNĐ.</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Nước chanh dây" 
+                data-price="35000"
+                data-image="https://tiemphonui.com/cdn/shop/articles/nuoc-cot-chanh-day.webp?v=1693797609">
+                Thêm vào giỏ hàng
+                </button>      
             </div>
             <div class="product">
                 <img src="https://www.liquor.com/thmb/MJRVqf-itJGY90nwUOYGXnyG-HA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mojito-720x720-primary-6a57f80e200c412e9a77a1687f312ff7.jpg" alt="Best Seller 5">
                 <h3>Cocktail Mojito</h3>
                 <p>350ml - 57000VNĐ.</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Cocktail Mojito" 
+                data-price="57000"
+                data-image="https://www.liquor.com/thmb/MJRVqf-itJGY90nwUOYGXnyG-HA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mojito-720x720-primary-6a57f80e200c412e9a77a1687f312ff7.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2TYWfYtFYxZHY8JcUv-6iU0MP3juSOjgrtA&s" alt="Best Seller 6">
                 <h3>Yogurt Drink</h3>
                 <p>250ml - 35000VNĐ.</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Yogurt Drink" 
+                data-price="35000"
+                data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2TYWfYtFYxZHY8JcUv-6iU0MP3juSOjgrtA&s">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
         </div>
         <button class="arrow right" onclick="moveCarousel('bestsellers', 1)">&gt;</button>
@@ -340,57 +569,102 @@
             <!-- 9 sản phẩm trong khu vực combo -->
             <div class="product">
                 <img src="https://banhmimahai.vn/wp-content/uploads/2022/06/cha-ca-11-1.jpg" alt="Combo 1">
-                <h3> Cà phê sữa đá + Bánh mì</h3>
+                <h3>Cà phê sữa đá + Bánh mì</h3>
                 <p>59000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Cà phê sữa đá + Bánh mì" 
+                data-price="59000"
+                data-image="https://banhmimahai.vn/wp-content/uploads/2022/06/cha-ca-11-1.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://trungnguyenlegendcafe.net/wp-content/uploads/2021/02/Set-Tr%C3%A0-%C4%90%C3%A0o-Cam-S%E1%BA%A3.jpg" alt="Combo 2">
                 <h3>Trà đào cam sả + Croissant bơ</h3>
                 <p>69000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Trà đào cam sả + Croissant bơ" 
+                data-price="69000"
+                data-image="https://trungnguyenlegendcafe.net/wp-content/uploads/2021/02/Set-Tr%C3%A0-%C4%90%C3%A0o-Cam-S%E1%BA%A3.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://cdn.tgdd.vn/2021/09/CookProductThumb/soda-viet-quat-tuoi-thumbvuong-620x620.jpg" alt="Combo 3">
                 <h3> Soda Ý (vị việt quất) + Cheesecake New York</h3>
                 <p>79000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name=" Soda Ý (vị việt quất) + Cheesecake New York" 
+                data-price="50000"
+                data-image="https://cdn.tgdd.vn/2021/09/CookProductThumb/soda-viet-quat-tuoi-thumbvuong-620x620.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://tbmart.vn/wp-content/uploads/2019/12/tra-hoa-cuc-duong-phen-mat-ong.jpg" alt="Combo 4">
                 <h3>Trà hoa cúc mật ong + Bánh quy bơ</h3>
                 <p>89000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Trà hoa cúc mật ong + Bánh quy bơ" 
+                data-price="89000"
+                data-image="https://tbmart.vn/wp-content/uploads/2019/12/tra-hoa-cuc-duong-phen-mat-ong.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://cdn.chonongsanonline.com/uploads/all/tx1ntI1uQ54oyIYIPhuY8QTbgZhkvzai7TovEqEk.webp    " alt="Combo 5">
                 <h3>Bánh creap + 1 trà sữa truyền thống</h3>
-                <p>12 bottles - Stay hydrated.</p>
-                <button>Add to Cart</button>
+                <p>145000VNĐ</p>
+                <button class="add-to-cart" 
+                data-name="Bánh creap + 1 trà sữa truyền thống" 
+                data-price="50000"
+                data-image="https://cdn.chonongsanonline.com/uploads/all/tx1ntI1uQ54oyIYIPhuY8QTbgZhkvzai7TovEqEk.webp  ">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://enjoycoffee.vn/wp-content/uploads/2024/07/z5645937521026_04b446749bdf8fadc85e47e02239d741.jpg" alt="Combo 6">
                 <h3>2 Bánh sừng bò + 1 cafe sữa + 1 trà sữa</h3>
                 <p>135000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="2 Bánh sừng bò + 1 cafe sữa + 1 trà sữa" 
+                data-price="135000"
+                data-image="https://enjoycoffee.vn/wp-content/uploads/2024/07/z5645937521026_04b446749bdf8fadc85e47e02239d741.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://product.hstatic.net/200000449489/product/6.1_411f479af1c9400a8501c4e892373ef5_master.jpg" alt="Combo 7">
                 <h3>2 bánh cheese</h3>
                 <p>84000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="2 bánh cheese" 
+                data-price="84000"
+                data-image="https://product.hstatic.net/200000449489/product/6.1_411f479af1c9400a8501c4e892373ef5_master.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://savourebakery.com/storage/images/san-pham/Banh%20kem%20bap/Banh-Kem-Bap-Kieu-2.jpg" alt="Combo 8">
                 <h3>1 bánh kem bắp</h3>
                 <p>169000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="1 bánh kem bắp" 
+                data-price="169000"
+                data-image="https://savourebakery.com/storage/images/san-pham/Banh%20kem%20bap/Banh-Kem-Bap-Kieu-2.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
             <div class="product">
                 <img src="https://savourebakery.com/storage/images/san-pham/Banh-tra-xanh-dau-do/Banh-Kem-Tra-Xanh-2.jpg" alt="Combo 9">
                 <h3>Bánh kem matcha</h3>
                 <p>189000VNĐ</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart" 
+                data-name="Bánh kem matcha" 
+                data-price="189000"
+                data-image="https://savourebakery.com/storage/images/san-pham/Banh-tra-xanh-dau-do/Banh-Kem-Tra-Xanh-2.jpg">
+                Thêm vào giỏ hàng
+                </button>  
             </div>
         </div>
         <button class="arrow right" onclick="moveCarousel('combo', 1)">&gt;</button>
@@ -439,5 +713,27 @@
 
         setInterval(autoSlide, 3000);
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const cartButtons = document.querySelectorAll(".add-to-cart");
+      
+          cartButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              const product = {
+                name: button.getAttribute("data-name"),
+                price: button.getAttribute("data-price"),
+                image: button.getAttribute("data-image"),
+              };
+      
+              let cart = JSON.parse(localStorage.getItem("cart")) || [];
+              cart.push(product);
+      
+              localStorage.setItem("cart", JSON.stringify(cart));
+              alert(`${product.name} đã được thêm vào giỏ hàng!`);
+            });
+          });
+        });
+      </script>
+      
 </body>
 </html>
